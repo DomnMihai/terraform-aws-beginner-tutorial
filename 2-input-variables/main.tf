@@ -9,7 +9,7 @@ resource "aws_iam_policy" "policy_string" {
     Version = "2012-10-17"
     Statement = [
       {
-        Effect = "Allow"
+        Effect = var.allow_s3_listing == true ? "Allow" : "Deny"
         Action = [
           "s3:ListAllMyBuckets",
         ]

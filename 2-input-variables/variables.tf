@@ -9,3 +9,8 @@ variable "policy_count" {
   description = "Number of policies to create"
   default = 0
 }
+
+variable "allow_s3_listing" {
+  type = bool
+  description = "Allow listing S3 buckets"
+}
