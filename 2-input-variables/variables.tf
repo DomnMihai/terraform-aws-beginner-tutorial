@@ -14,3 +14,7 @@ variable "allow_s3_listing" {
   type = bool
   description = "Allow listing S3 buckets"
 }
+
+variable "action_list" {
+  type = list(string)
+}
