@@ -16,9 +16,7 @@ resource "aws_iam_policy" "policy_string" {
     ]
   })
 
-  tags = {
-    Creator = "terraform"
-  }
+  tags = var.tags_map
 }
 
 resource "aws_iam_policy" "policy_number" {

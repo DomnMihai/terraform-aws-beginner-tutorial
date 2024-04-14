@@ -18,3 +18,12 @@ variable "allow_s3_listing" {
 variable "action_list" {
   type = list(string)
 }
+
+variable "tags_map" {
+  type = map(string)
+  default = {
+    Creator = "terraform"
+    Source = "tags_map input variable"
+  }
+}
+
