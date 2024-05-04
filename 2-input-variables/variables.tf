@@ -27,3 +27,7 @@ variable "tags_map" {
   }
 }
 
+variable "sensitive_text" {
+  type = string
+  sensitive = true
+}

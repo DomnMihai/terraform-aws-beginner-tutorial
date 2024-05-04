@@ -43,3 +43,14 @@ resource "aws_iam_policy" "policy_number" {
     Creator = "terraform"
   }
 }
+
+resource "aws_ssm_parameter" "sensitive_ssm_parameter" {
+  name  = "parameter-with-sensitive-value"
+  description = "I contain ${var.sensitive_text} value"
+  type  = "String"
+  value = var.sensitive_text
+
+  tags = {
+    Creator = "terraform"
+  }
+}
