@@ -50,7 +50,5 @@ resource "aws_ssm_parameter" "sensitive_ssm_parameter" {
   type  = "String"
   value = var.sensitive_text
 
-  tags = {
-    Creator = "terraform"
-  }
+  tags = var.tags_object
 }

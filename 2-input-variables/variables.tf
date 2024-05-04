@@ -31,3 +31,10 @@ variable "sensitive_text" {
   type = string
   sensitive = true
 }
+
+variable "tags_object" {
+  type = object({
+    Creator = string
+    Source = string
+  })
+}
