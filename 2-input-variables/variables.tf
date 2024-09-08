@@ -2,12 +2,22 @@ variable "policy_description" {
   type = string
   description = "Description for policy_string"
   default = "Description for policy_string"
+
+  validation {
+    condition = length(var.policy_description) <= 40
+    error_message = "Policy description has more than 40 characters"
+  }
 }
 
 variable "policy_count" {
   type = number
   description = "Number of policies to create"
   default = 0
+
+  validation {
+    condition = var.policy_count < 3
+    error_message = "Attempt to create more than 2 policies"
+  }
 }
 
 variable "allow_s3_listing" {
