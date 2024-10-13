@@ -3,3 +3,8 @@ variable "allow_effect" {
   type = bool
   default = true
 }
+
+variable "environment" {
+  description = "Deployment environment. Supported values dev, stg"
+  type = string
+}
