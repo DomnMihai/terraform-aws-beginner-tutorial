@@ -11,4 +11,10 @@ terraform {
 
 provider "aws" {
   region = "eu-north-1"
+  profile = "terraform-tutorial"
+  default_tags {
+    tags = {
+      Creator = "terraform"
+    }
+  }
 }
