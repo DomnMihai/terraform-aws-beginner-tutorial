@@ -20,7 +20,7 @@ resource "aws_iam_policy" "policy_string" {
 }
 
 resource "aws_vpc" "main" {
-  cidr_block       = local.vpc_setup[var.environment].vpc_cidr
+  cidr_block = local.vpc_setup[var.environment].vpc_cidr
 
   tags = {
     Name = "main"
@@ -30,9 +30,9 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "main" {
   for_each = local.vpc_setup[var.environment].subnets
 
-  vpc_id     = aws_vpc.main.id
-  cidr_block = each.value.cidr
-  availability_zone = each.value.availability_zone
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = each.value.cidr
+  availability_zone       = each.value.availability_zone
   map_public_ip_on_launch = lookup(each.value, "auto_assign_ip", false)
 
   tags = {
