@@ -6,3 +6,4 @@ terraform.tfstate.backup
 
 # IDE
 *.code-workspace
+.idea/
